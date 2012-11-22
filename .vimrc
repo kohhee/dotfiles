@@ -14,6 +14,8 @@ filetype indent on
 syntax enable
 filetype on
 
+
+
 "##########基本系##########
 set encoding=utf-8 "文字エンコーディングの指定
 set fileencodings=utf-8 "文字エンコーディングの指定
