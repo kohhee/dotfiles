@@ -1,0 +1,17 @@
+# .bashrc
+
+export PYTHONPATH=/opt/python2.7/lib/python2.7/site-packages/
+export PATH=/usr/local/bin:/sbin:/usr/sbin:/opt/python2.7/bin:$PATH
+
+export WORKON_HOME=$HOME/.virtualenvs
+source `which virtualenvwrapper.sh`
+
+# Source global definitions
+if [ -f /etc/bashrc ]; then
+	. /etc/bashrc
+fi
+
+# User specific aliases and functions
+
+alias la='ls -a'
+alias ll='ls -la'
