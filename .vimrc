@@ -35,7 +35,7 @@ set scrolloff=3 "カーソルの上下に表示する行数の指定
 syntax on "カラーの有効化
 set smartindent "オートインデント
 set expandtab "タブの代わりに空白文字挿入
-set tabstop=4 "タブは半角4文字分
+set ts=4 sw=4 sts=0 "タブは半角4文字分
 set backspace=indent,eol,start "backspaceの有効化
 highlight Comment ctermfg=Green "コメントの色を変更
 autocmd BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal g`\"" | endif "前回終了時の行で起動
