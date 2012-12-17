@@ -35,7 +35,7 @@ set scrolloff=3 "カーソルの上下に表示する行数の指定
 syntax on "カラーの有効化
 set smartindent "オートインデント
 set expandtab "タブの代わりに空白文字挿入
-set tabstop=4 "タブは半角4文字分
+set tabstop=4 shiftwidth=4 softtabstop=0 "タブは半角4文字分
 set backspace=indent,eol,start "backspaceの有効化
 highlight Comment ctermfg=Green "コメントの色を変更
 autocmd BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal g`\"" | endif "前回終了時の行で起動
@@ -46,4 +46,5 @@ set ignorecase "検索文字列が小文字の場合は大/小文字を区別し
 set smartcase "検索文字列に大文字が含まれる場合は大/小文字を区別する
 set wrapscan "検索時に最後まで行ったら最初に戻る
 set incsearch "インクリメンタルサーチを行う
-nmap <Esc><Esc> :nohlsearch<CR><Esc> "ESCキー2回でハイライトを消す
+"ESCキー2回でハイライトを消す
+nmap <Esc><Esc> :nohlsearch<CR><Esc> 
