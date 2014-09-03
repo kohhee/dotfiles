@@ -1,0 +1,35 @@
+# update homebrew
+update
+
+# upgrade formulas
+upgrade
+
+# install brew-cask
+tap caskroom/cask
+install brew-cask
+
+# install homebrew packages
+install git
+install vim
+
+# install brew-cask packages
+cask install alfred
+cask install appcleaner
+cask install coteditor
+cask install dropbox
+cask install easysimbl
+cask install evernote
+cask install flash
+cask install flux
+cask install google-chrome
+cask install iterm2
+cask install keka
+cask install onyx
+cask install sophos-anti-virus-home-edition
+
+cask alfred link
+
+# cleanup
+cleanup
+cask cleanup
+

@@ -1,15 +1,31 @@
-# 研究用
-export PATH=/usr/bin:$PATH
-export PATH=/usr/local/bin:$PATH
-export PATH=/usr/local/share/python:$PATH
-export MACOSX_DEPLOYMENT_TARGET=10.6
+# alias
+alias ls='ls -l -GF'
+alias la='ls -a'
+
+# set file colors
+export LSCOLORS=gxfxcxdxbxegedabagacad
+
+# bash-completion
+if [ -f $(brew --prefix)/etc/bash_completion ]; then
+    . $(brew --prefix)/etc/bash_completion
+fi
+
+# Pythonz
+[[ -s $HOME/.pythonz/etc/bashrc ]] && source $HOME/.pythonz/etc/bashrc
+export PATH=$HOME/.pythonz/pythons/CPython-2.7.8/bin:$PATH
+
+# virtulenv
+export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python
+export VIRTUALENVWRAPPER_VIRTUALENV=/usr/local/bin/virtualenv
 export WORKON_HOME=$HOME/.virtualenvs
 source `which virtualenvwrapper.sh`
 
-# エイリアスの設定
-alias la='ls -a'
-alias ll='ls -la'
-alias rm='rm -i'
-alias man='env LANG=ja_JP.UTF-8 /usr/local/bin/jman'
-alias openssl10='/usr/local/ssl/bin/openssl'
-alias wp='cd /Users/kohei/Documents/master/fukuta_research'
+# Auto workon
+# http://d.hatena.ne.jp/toromoti/20140313/1394728624 
+. .workon.sh
+
+function prompt_command() {
+    workon_workon
+}
+
+PROMPT_COMMAND=prompt_command
