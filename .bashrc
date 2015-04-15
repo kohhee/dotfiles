@@ -1,6 +1,7 @@
 # alias
 alias ls='ls -l -GF'
 alias la='ls -a'
+alias rm='rm -i'
 
 # set file colors
 export LSCOLORS=gxfxcxdxbxegedabagacad
@@ -10,22 +11,29 @@ if [ -f $(brew --prefix)/etc/bash_completion ]; then
     . $(brew --prefix)/etc/bash_completion
 fi
 
+# pyenv
+export PYENV_ROOT="/usr/local/opt/pyenv"
+if [ -d "${PYENV_ROOT}" ]; then
+    export PATH=${PYENV_ROOT}/bin:$PATH
+    eval "$(pyenv init -)"
+fi
+
 # Pythonz
-[[ -s $HOME/.pythonz/etc/bashrc ]] && source $HOME/.pythonz/etc/bashrc
-export PATH=$HOME/.pythonz/pythons/CPython-2.7.8/bin:$PATH
+#[[ -s $HOME/.pythonz/etc/bashrc ]] && source $HOME/.pythonz/etc/bashrc
+#export PATH=$HOME/.pythonz/pythons/CPython-2.7.8/bin:$PATH
 
 # virtulenv
-export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python
-export VIRTUALENVWRAPPER_VIRTUALENV=/usr/local/bin/virtualenv
-export WORKON_HOME=$HOME/.virtualenvs
-source `which virtualenvwrapper.sh`
+#export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python
+#export VIRTUALENVWRAPPER_VIRTUALENV=/usr/local/bin/virtualenv
+#export WORKON_HOME=$HOME/.virtualenvs
+#source `which virtualenvwrapper.sh`
 
 # Auto workon
 # http://d.hatena.ne.jp/toromoti/20140313/1394728624 
-. .workon.sh
+#. .workon.sh
 
-function prompt_command() {
-    workon_workon
-}
+#function prompt_command() {
+#    workon_workon
+#}
 
-PROMPT_COMMAND=prompt_command
+#PROMPT_COMMAND=prompt_command
